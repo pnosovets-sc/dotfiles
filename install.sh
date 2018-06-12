@@ -36,7 +36,7 @@ echoHeader 'Creating .vimrc file'
 curl -sL https://raw.githubusercontent.com/pnosovets-sc/dotfiles/master/.vimrc > ~/.vimrc
 
 echoHeader 'Installing Vim plugins'
-vim +slient +PluginInstall +qall
+vim +slient +PluginInstall +qall </dev/tty
 
 # .bashrc
 echoHeader 'Updating .bashrc'
