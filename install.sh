@@ -39,7 +39,7 @@ echoHeader 'Installing Vim plugins'
 vim +PluginInstall +qall
 
 # .bashrc
-installHeader 'Updating .bashrc'
+echoHeader 'Updating .bashrc'
 echo 'FZF_CTRL_T_COMMAND=ag --hidden --ignore .git -g ""' >> ~/.bashrc
 echo 'FZF_DEFAULT_COMMAND=ag --hidden --ignore .git -g ""' >> ~/.bashrc
 echo '[ -f ~/.fzf.bash ] && source ~/.fzf.bash' >> ~/.bashrc
@@ -52,7 +52,7 @@ echo 'export FZF_DEFAULT_OPTS="
 
 
 # Aliases
-installHeader 'Adding bash aliases'
+echoHeader 'Adding bash aliases'
 curl -sL  https://raw.githubusercontent.com/pnosovets-sc/dotfiles/master/.bash_aliases >> ~/.bash_aliases
 
 source ~/.bashrc
