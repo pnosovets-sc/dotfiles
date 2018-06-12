@@ -2,37 +2,44 @@
 
 { # This ensures the entire script is downloaded.  
 
+function echoHeader {
+  printf -- "--------------------------------------------\n\n"
+  printf  "\n\n[INFO]  $1\n\n"
+}
+
 # Before install
-echo "[INFO] Update dependencies"
+echoHeader 'Installing git'
 sudo apt-get update
 sudo apt-get install -y git
 
 # FZF
+echoHeader 'Installling FZF'
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
 
 # Ag 
+echoHeader 'Installing Silver Searcher'
 apt-get install silversearcher-ag
 
 # Update VIM to v8
-echo "[INFO] Installing Vim8"
+echoHeader 'Installing VIM8'
 sudo add-apt-repository ppa:jonathonf/vim
 sudo apt-get update
 sudo apt-get install -y vim 
 
 # Vundle
-echo "[INFO] Installing Vundle plugin manager"
+echoHeader 'Installing Vundle Vim plugin manager'
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 # .vimrc
-echo "[INFO] Create .vimrc file"
-git@github.com:pnosovets-sc/dotfiles.git
-https://raw.githubusercontent.com/pnosovets-sc/dotfiles/master/.vimrc > ~/.vimrc
+echoHeader 'Creating .vimrc file'
+curl -sL https://raw.githubusercontent.com/pnosovets-sc/dotfiles/master/.vimrc > ~/.vimrc
 
-echo "[INFO] Install Vim plugins"
+echoHeader 'Installing Vim plugins'
 vim +PluginInstall +qall
 
 # .bashrc
+installHeader 'Updating .bashrc'
 echo 'FZF_CTRL_T_COMMAND=ag --hidden --ignore .git -g ""' >> ~/.bashrc
 echo 'FZF_DEFAULT_COMMAND=ag --hidden --ignore .git -g ""' >> ~/.bashrc
 echo '[ -f ~/.fzf.bash ] && source ~/.fzf.bash' >> ~/.bashrc
@@ -45,6 +52,7 @@ echo 'export FZF_DEFAULT_OPTS="
 
 
 # Aliases
-https://raw.githubusercontent.com/pnosovets-sc/dotfiles/master/.bash_aliases >> ~/.bash_aliases
+installHeader 'Adding bash aliases'
+curl -sL  https://raw.githubusercontent.com/pnosovets-sc/dotfiles/master/.bash_aliases >> ~/.bash_aliases
 
 } # This ensures the entire script is downloaded.
