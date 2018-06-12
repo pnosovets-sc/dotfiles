@@ -43,11 +43,10 @@ echoHeader 'Updating .bashrc'
 echo 'FZF_CTRL_T_COMMAND=`ag --hidden --ignore .git -g ""`' >> ~/.bashrc
 echo 'FZF_DEFAULT_COMMAND=`ag --hidden --ignore .git -g ""`' >> ~/.bashrc
 echo 'export FZF_DEFAULT_OPTS="
---color fg:188,bg:233,hl:103,fg+:222,bg+:234,hl+:104
---color info:183,prompt:110,spinner:107,pointer:167,marker:215
-      --color=marker:#719e07,fg+:#839496,prompt:#719e07,hl+:#719e07
-      "' >> ~/.bashrc
-
+  --color fg:188,bg:233,hl:103,fg+:222,bg+:234,hl+:104
+  --color info:183,prompt:110,spinner:107,pointer:167,marker:215
+        --color=marker:#719e07,fg+:#839496,prompt:#719e07,hl+:#719e07
+       "' | sed "s/\"/'/" >> ~/.bashrc
 
 # Aliases
 echoHeader 'Adding bash aliases'
