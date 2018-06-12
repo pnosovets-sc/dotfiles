@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+{ # This ensures the entire script is downloaded.  
+
 # Before install
 echo "[INFO] Update dependencies"
 sudo apt-get update
@@ -44,3 +46,5 @@ echo 'export FZF_DEFAULT_OPTS="
 
 # Aliases
 https://raw.githubusercontent.com/pnosovets-sc/dotfiles/master/.bash_aliases >> ~/.bash_aliases
+
+} # This ensures the entire script is downloaded.
