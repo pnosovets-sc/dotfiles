@@ -3,14 +3,14 @@
 { # This ensures the entire script is downloaded.  
 
 function echoHeader {
-  printf -- "--------------------------------------------\n\n"
-  printf  "\n\n[INFO]  $1\n\n"
+  printf -- "\n\n--------------------------------------------"
+  printf  "\n[INFO]  $1\n\n"
 }
 
 # Before install
-echoHeader 'Installing git'
+echoHeader 'Install dependencies'
 sudo apt-get update
-sudo apt-get install -y git
+sudo apt-get install -y git software-properties-common python-software-properties
 
 # FZF
 echoHeader 'Installling FZF'
@@ -54,5 +54,7 @@ echo 'export FZF_DEFAULT_OPTS="
 # Aliases
 installHeader 'Adding bash aliases'
 curl -sL  https://raw.githubusercontent.com/pnosovets-sc/dotfiles/master/.bash_aliases >> ~/.bash_aliases
+
+source ~/.bashrc
 
 } # This ensures the entire script is downloaded.
