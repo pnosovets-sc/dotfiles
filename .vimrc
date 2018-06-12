@@ -1,5 +1,7 @@
 set rtp+=~/.vim/bundle/Vundle.vim
 
+set encoding=utf-8
+
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'itchyny/lightline.vim'
