@@ -1,10 +1,15 @@
 set rtp+=~/.vim/bundle/Vundle.vim
-
+set laststatus=2
+set nonumber
 set encoding=utf-8
+
+imap jj <Esc>
 
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
+Plugin 'itchyny/vim-gitbranch'
 Plugin 'itchyny/lightline.vim'
+Plugin 'itchyny/landscape.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
@@ -12,7 +17,6 @@ Plugin 'danro/rename.vim'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'scrooloose/syntastic'
 Plugin 'editorconfig/editorconfig-vim'
-Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-surround'
 Plugin 'mattn/emmet-vim'
 Plugin 'chase/vim-ansible-yaml'
@@ -22,6 +26,7 @@ Plugin 'JamshedVesuna/vim-markdown-preview'
 Plugin 'c9s/helper.vim'
 Plugin 'c9s/treemenu.vim'
 Plugin 'c9s/vikube.vim'
+Plugin 'tpope/vim-fugitive'
 
 " Track the engine.
 Plugin 'SirVer/ultisnips'
@@ -37,7 +42,8 @@ map ; :Buffers<CR>
 map . :Files<CR>
 map <Leader>r :Tags<CR>
 map <C-o> :NERDTreeToggle<CR>
-map  <C-l> :tabn<CR>
+" map  <C-l> :tabn<CR>
+map  <C-l> :Lines<CR>
 map  <C-h> :tabp<CR>
 map  <C-n> :tabnew<CR>
 nmap <Leader>l <Plug>(Limelight)
@@ -46,7 +52,7 @@ nmap <Leader>l <Plug>(Limelight)
 nmap <S-Enter> O<Esc>
 nmap <CR> o<Esc>
 
-set nu
+set nonu
 
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
@@ -97,3 +103,13 @@ autocmd FileType yaml setlocal commentstring=#\ %s
 
 let g:NERDSpaceDelims = 1
 
+" lightline 
+let g:lightline = {
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'readonly', 'filename', 'modified', 'gitbranch' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'gitbranch#name'
+      \ },
+      \ }
