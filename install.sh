@@ -19,7 +19,7 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 
 # Ag 
 echoHeader 'Installing Silver Searcher'
-apt-get install silversearcher-ag
+sudo apt-get install -y silversearcher-ag
 
 # Update VIM to v8
 echoHeader 'Installing VIM8'
