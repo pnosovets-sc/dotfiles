@@ -47,7 +47,7 @@ echo 'export FZF_DEFAULT_OPTS="
   --color info:183,prompt:110,spinner:107,pointer:167,marker:215
         --color=marker:#719e07,fg+:#839496,prompt:#719e07,hl+:#719e07
        "' | sed "s/\"/'/" >> ~/.bashrc
-echo 'export FZF_CTRL_T_OPTS=`-m --bind ctrl-a:select-all,ctrl-d:deselect-all,ctrl-t:toggle-all`' >> ~/.bashrc
+echo 'export FZF_CTRL_T_OPTS="-m --bind ctrl-a:select-all,ctrl-d:deselect-all,ctrl-t:toggle-all"' | sed "s/\"/'/" >> ~/.bashrc
 
 # Aliases
 echoHeader 'Adding bash aliases'
