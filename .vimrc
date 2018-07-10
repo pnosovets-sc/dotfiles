@@ -2,7 +2,6 @@ set rtp+=~/.vim/bundle/Vundle.vim
 set laststatus=2
 set nonumber
 set encoding=utf-8
-
 imap jj <Esc>
 
 call vundle#begin()
@@ -39,7 +38,7 @@ call vundle#end()
 let mapleader=","
 
 map ; :Buffers<CR>
-map . :Files<CR>
+map , :Files<CR>
 map <Leader>r :Tags<CR>
 map <C-o> :NERDTreeToggle<CR>
 " map  <C-l> :tabn<CR>
