@@ -9,8 +9,8 @@ function echoHeader {
 
 # Before install
 echoHeader 'Install dependencies'
-sudo apt-get update
-sudo apt-get install -y git software-properties-common python-software-properties
+#sudo apt-get update
+#sudo apt-get install -y git software-properties-common python-software-properties
 
 # FZF
 echoHeader 'Installling FZF'
